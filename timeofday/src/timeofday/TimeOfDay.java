@@ -12,7 +12,7 @@ package timeofday;
 public class TimeOfDay {
 	/**
 	 * @invar minutessincemidnight between 0 and 24*60
- * 		|0<= minutesSinceMidnight && minutesSinceMidnight <24*60
+	 * 		|0<= minutesSinceMidnight && minutesSinceMidnight <24*60
 	 */
 	private int minutesSinceMidnight;
 	public int getHours() {
@@ -21,32 +21,14 @@ public class TimeOfDay {
 	 public int getMinutes() {
 		 return minutesSinceMidnight % 60;
 		 }
-	 /**
-	  * sets this object's hours.
-	  * 
-	  * @pre the given hours are between 0 and 23
-	  * 	|0<=hours && hours <=23
-	  * @post the object's hours equal the given hours
-	  * 	|getHours() == hours
-	  * @post This object's minutes have remained unchanged
-	  * 	|getMinutes () == old(getMinutes())
-	  * @param hours
-	  */
-	 public void setHours(int hours) {
-		 minutesSinceMidnight= getMinutes() + hours = 60;
+	 public TimeOfDay(int hours, int minutes) {
+		 minutesSinceMidnight = hours *60 +minutes
 	 }
 	 /**
-	  * sets this object's minutes.
-	  * 
-	  * @pre the given minutes are between 0 and 59
-	  * 	|0<=minutes && minutes <=59
-	  * @post the object's minutes equal the given minutes
-	  * 	|getMinutes() == minutes
-	  * @post This object's hours have remained unchanged
-	  * 	|getHours () == old(getHours())
-	  * @param hours
+	  * Initializes this instane with given hours and minutes
+	  * @pre The given hours betwen 0 and 23
+	  * @pre given min between 0 and 59
+	  * @post instance's hours equal given hours
+	  * @post instance's hours equal given minutes
 	  */
-	 public void setMinutes(int minutes) {
-		 minutesSinceMidnight = getHours() *60 + minutes;
-	 }
 }
